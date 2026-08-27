@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Work Term 1 — Reunion Coffee Roasters · Bassem Sourour</title>
+<meta name="description" content="Co-op work term report: Production Data and Automation Specialist at Reunion Coffee Roasters, Oakville, May–August 2026. Mapping how information moves through a roasting plant, and building software to replace the paper it moved on.">
+<meta name="author" content="Bassem Sourour">
+<meta property="og:title" content="Work Term 1 — Reunion Coffee Roasters">
+<meta property="og:description" content="Four months mapping a coffee roastery's information flow and building software to replace its paper.">
+<meta property="og:type" content="article">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="wordmark" href="index.html">Bassem&nbsp;Sourour</a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Portfolio</a>
+      <a href="work-term-1.html" aria-current="page">Work Term 1</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="report-head">
+    <div class="wrap">
+      <span class="eyebrow reveal">Co-op Work Term Report · Work Term 1</span>
+      <h1 class="reveal">Four months taking a coffee roastery off paper</h1>
+      <p class="lede prose reveal">
+        I spent the summer at Reunion Coffee Roasters figuring out how
+        information actually moves through a production plant — then
+        building software to replace the clipboards it was moving on.
+        This is what I set out to learn, what I built, and the part I
+        got wrong early.
+      </p>
+
+      <dl class="fact-list reveal">
+        <div>
+          <dt>Employer</dt>
+          <dd>Reunion Coffee Roasters</dd>
+        </div>
+        <div>
+          <dt>Role</dt>
+          <dd>Production Data &amp; Automation Specialist</dd>
+        </div>
+        <div>
+          <dt>Term</dt>
+          <dd>May–August 2026 · 4 months</dd>
+        </div>
+        <div>
+          <dt>Location</dt>
+          <dd>Oakville, Ontario</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <nav class="toc" aria-label="Sections of this report">
+    <ol>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#employer">The Employer</a></li>
+      <li><a href="#goals">Goals</a></li>
+      <li><a href="#work">The Work</a></li>
+      <li><a href="#reflection">Reflection</a></li>
+      <li><a href="#conclusion">Conclusion</a></li>
+      <li><a href="#thanks">Acknowledgments</a></li>
+    </ol>
+  </nav>
+
+  <div class="wrap">
+
+    <!-- ========================================================
+         1. INTRODUCTION
+         ======================================================== -->
+    <section class="report-section" id="intro">
+      <h2 class="reveal">Introduction</h2>
+      <div class="prose">
+        <p class="reveal">
+          From May to August 2026 I worked at Reunion Coffee Roasters in
+          Oakville as a Production Data and Automation Specialist. It was
+          my first co-op term, between second and third year of the
+          Bachelor of Computing program at the University of Guelph.
+        </p>
+        <p class="reveal">
+          The job started as a question rather than a project. Reunion
+          runs a modern roasting facility — Microsoft Dynamics AX as the
+          ERP, PLCs and HMIs on the equipment, Excel everywhere in
+          between — but a significant amount of what happens on the floor
+          is still recorded on paper. Someone writes a number on a sheet,
+          the sheet travels, and eventually a person types it into a
+          computer. My first task was to find out where all of that paper
+          was, what was written on it, and where it went.
+        </p>
+        <p class="reveal">
+          The second half of the term was spent building software to
+          replace some of it. What I mainly took away, though, wasn't
+          about the software.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         2. THE EMPLOYER
+         ======================================================== -->
+    <section class="report-section" id="employer">
+      <h2 class="reveal">The Employer</h2>
+      <div class="prose">
+        <p class="reveal">
+          Reunion Coffee Roasters is a family-owned specialty coffee
+          roaster based in Oakville, Ontario. The Pesce family has been
+          in Canada's specialty coffee market for more than forty years,
+          and the company roasts and supplies coffee to customers across
+          Canada and internationally — including Organic, Fair Trade,
+          Direct Trade and Rainforest Alliance certified varieties.
+        </p>
+        <p class="reveal">
+          A few things about the place stood out to me. It has been a
+          Certified B Corporation since 2013, which means it gets
+          independently assessed on environmental and social performance
+          and has to re-certify regularly — its most recent score was
+          100.7, against a qualifying threshold of 80. The roasting
+          facility is one of the largest renewable-energy-powered
+          roasting operations in Canada. And in 2015 Roast Magazine named
+          Reunion its Macro Roaster of the Year.
+        </p>
+
+        <h3 class="reveal">Where computing fits</h3>
+        <p class="reveal">
+          Coffee roasting isn't an industry people associate with
+          software, which is exactly what made it interesting to work in.
+          The plant already runs on a real technology stack: Microsoft
+          Dynamics AX holds inventory and production orders, PLCs control
+          the roasters and packaging equipment, and HMIs give operators a
+          way to interact with those machines. Excel sits between all of
+          it, doing far more work than a spreadsheet should reasonably be
+          asked to do.
+        </p>
+        <p class="reveal">
+          The gap is between the machines and the records. Equipment
+          produces data. The ERP consumes data. But a lot of what happens
+          in between — counts, checks, batch details, quality
+          observations — gets written down by hand first and entered
+          later. Every one of those handoffs is a delay, and a chance for
+          the number to change on the way. Closing that gap is the
+          computing problem at a company like this one, and it's the
+          reason my role existed.
+        </p>
+      </div>
+
+      <!-- PHOTO: see the list I sent you. Swap the placeholder for the img. -->
+      <figure class="reveal">
+        <div class="img-placeholder">
+          Photo: the roasting floor or production line
+        </div>
+        <!-- <img src="images/plant-floor.jpg" alt="Coffee roasting equipment on the production floor at Reunion Coffee Roasters"> -->
+        <figcaption>
+          The roasting floor. Most of the equipment here already produces
+          data — the challenge was everything happening around it.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ========================================================
+         3. GOALS
+         ======================================================== -->
+    <section class="report-section" id="goals">
+      <h2 class="reveal">Goals &amp; Learning Outcomes</h2>
+      <div class="prose">
+        <p class="reveal">
+          Coming in, I set goals around three of the learning outcomes
+          from my program: technical literacy, problem solving, and
+          inquiry and analysis. I picked those because the role was
+          described to me as open-ended, and I wanted goals that would
+          still make sense whatever the work turned out to be. That
+          guess turned out to be right — the job changed shape twice over
+          four months.
+        </p>
+      </div>
+
+      <ul class="goals">
+
+        <li class="reveal">
+          <span class="goals__status goals__status--met">Met</span>
+          <span class="goals__title">Technical literacy</span>
+          <p class="goals__note">
+            I went from having written mostly coursework and small
+            personal projects to shipping three desktop applications
+            that people at work actually use. Across them I picked up
+            TypeScript, Electron and React on one side and Python, Flask
+            and Tkinter on the other; worked with SQLite, third-party
+            APIs, and instruments talking over USB serial; and learned
+            to package software so a non-technical person can install
+            and run it. That last part was the one I'd never had to
+            think about before, and it turned out to be a real portion
+            of the work.
+          </p>
+        </li>
+
+        <li class="reveal">
+          <span class="goals__status goals__status--met">Met</span>
+          <span class="goals__title">Problem solving</span>
+          <p class="goals__note">
+            The problems I was handed weren't specified — they were
+            described as frustrations. Someone would tell me a process
+            was slow or error-prone, and turning that into something I
+            could build was most of the job. The technical problems were
+            usually the easier half.
+          </p>
+        </li>
+
+        <li class="reveal">
+          <span class="goals__status goals__status--met">Met</span>
+          <span class="goals__title">Inquiry &amp; analysis</span>
+          <p class="goals__note">
+            Mapping the plant's information flows was this goal in its
+            purest form: I couldn't design anything until I understood
+            how a number got from the floor to the system, and the only
+            way to learn that was to ask people and watch them work. I
+            was also wrong about a lot of it at first, which I've written
+            about below.
+          </p>
+        </li>
+
+      </ul>
+
+      <!-- NOTE FROM ME: you said all three were met, so that's what I've
+           written — I'm not inventing a failure. But if there's a goal
+           you actually fell short on, the rubric rewards saying so.
+           There's a "Partly" and a "Not met" style ready to use:
+           <span class="goals__status">Partly</span>
+           <span class="goals__status">Not met</span>            -->
+    </section>
+
+    <!-- ========================================================
+         4. THE WORK
+         ======================================================== -->
+    <section class="report-section" id="work">
+      <h2 class="reveal">The Work</h2>
+      <div class="prose">
+        <p class="reveal">
+          The term split cleanly into two halves.
+        </p>
+
+        <h3 class="reveal">First: mapping how information moves</h3>
+        <p class="reveal">
+          For the first few weeks my job was to walk the plant and
+          document everything. Not the machines — the information. Where
+          does a number get created, who writes it down, what happens to
+          the paper, who reads it next, and where does it finally land?
+          I turned that into process maps showing each flow end to end,
+          and used them to identify where paper was creating delay,
+          duplicate entry, or room for error.
+        </p>
+        <p class="reveal">
+          This was slower than I expected, and not because the processes
+          were complicated. It was because the version of a process
+          people describe and the version they perform are rarely the
+          same, and you only find the difference by watching.
+        </p>
+        <p class="reveal">
+          The finished pack ran to nineteen diagrams — plant layout and
+          material flow, information-flow swimlanes for each production
+          area, the batch ticket's full lifecycle, and a set of
+          future-state maps showing where the process could go. It's an
+          internal document, so what follows is a simplified version of
+          one of them.
+        </p>
+        <p class="reveal">
+          The shape that kept turning up looked like this — a batch
+          ticket that travels with the coffee, collecting handwritten
+          information at every stage, until someone in the office types
+          the whole thing into the ERP at the end:
+        </p>
+      </div>
+
+      <!-- Simplified for the public site. The real maps are internal. -->
+      <figure class="reveal" style="max-width:100%">
+        <div class="flow">
+          <div class="flow__step">
+            <div class="flow__box">Ticket created</div>
+            <span class="flow__who">Planner</span>
+            <p class="flow__note">Product, quantity, roast target — printed on paper.</p>
+          </div>
+          <div class="flow__step">
+            <div class="flow__box">Roast</div>
+            <span class="flow__who">Operator</span>
+            <p class="flow__note">Weights, temperatures and roast data written on the ticket by hand.</p>
+          </div>
+          <div class="flow__step">
+            <div class="flow__box">Quality check</div>
+            <span class="flow__who">QA</span>
+            <p class="flow__note">Readings taken off lab instruments and copied across.</p>
+          </div>
+          <div class="flow__step">
+            <div class="flow__box">Packaging</div>
+            <span class="flow__who">Supervisor</span>
+            <p class="flow__note">Counts, weights and line checks added to the ticket.</p>
+          </div>
+          <div class="flow__step flow__step--system">
+            <div class="flow__box">ERP</div>
+            <span class="flow__who">Office</span>
+            <p class="flow__note">The finished ticket is keyed in by hand, after the fact.</p>
+          </div>
+        </div>
+        <figcaption>
+          A simplified view of one information flow. Every arrow is a
+          paper handoff. The ERP is the system of record, but nothing
+          reaches it automatically — which is the gap the rest of my
+          term was spent on.
+        </figcaption>
+      </figure>
+
+      <div class="prose">
+
+        <h3 class="reveal">Then: building things</h3>
+        <p class="reveal">
+          Once the maps existed, the gaps in them turned into a backlog.
+          The second half of the term was spent building applications
+          against that list.
+        </p>
+
+        <h4 class="reveal" style="font-family:var(--font-body);font-size:1rem;font-weight:600;margin-top:1.75rem">
+          Humidex Monitor
+        </h4>
+        <p class="reveal">
+          A desktop application that tracks heat stress in the plant.
+          Ontario's guidance on working in heat is expressed in humidex
+          terms, and checking it manually meant someone reading a sensor
+          and doing a conversion. The app polls our AlertAQ temperature
+          and humidity sensors, calculates humidex using Environment
+          Canada's formula, pulls outdoor conditions from Environment
+          Canada for comparison, and raises an alert when a threshold is
+          crossed. It shows a live dashboard, keeps history, logs alerts,
+          and exports to CSV or Excel.
+        </p>
+        <p class="reveal">
+          It's built with Electron, React and TypeScript, stores
+          everything in a local SQLite database, and runs entirely on the
+          user's PC with no server component. Two decisions I'd defend:
+          credentials are held in OS-level encrypted storage rather than
+          anywhere the UI can reach them, and humidex is calculated when
+          a reading is displayed rather than stored — so if the formula
+          ever needs correcting, the historical data corrects itself.
+        </p>
+
+        <h4 class="reveal" style="font-family:var(--font-body);font-size:1rem;font-weight:600;margin-top:1.75rem">
+          QA Logger
+        </h4>
+        <p class="reveal">
+          The quality lab runs samples through several instruments — a
+          barcode scanner, an Ohaus BeanPro for moisture and density, a
+          Dansensor CheckMate 3 for gas analysis — and every reading was
+          being copied into a spreadsheet by hand. QA Logger listens to
+          those instruments directly over USB serial, parses what they
+          send, and writes the results into the workbook and a CSV audit
+          trail as the readings happen. Scanning a barcode sets the
+          active sample, and subsequent readings land on that sample's
+          row.
+        </p>
+        <p class="reveal">
+          It's Python with a Tkinter interface, and it's the most
+          concurrent thing I've written: a UI thread, a backend worker
+          that owns the Excel session, a port monitor that notices
+          devices being plugged in and unplugged, and one listener
+          thread per active instrument — all communicating through
+          queues rather than shared state.
+        </p>
+        <p class="reveal">
+          The problem I didn't anticipate was baud rates. Serial devices
+          need to be read at the right speed, and if you guess wrong you
+          get garbage instead of an error. My first approach cycled
+          through candidate rates on a timer, which quietly broke the
+          BeanPro — it prints once per sample, so a reprobe at the wrong
+          moment meant the reading was simply gone. I changed it to
+          rotate on evidence rather than on a clock: keep the current
+          rate until the bytes coming back are unreadable, and once
+          legible text arrives, commit to it. Devices that speak rarely
+          stopped being punished for it.
+        </p>
+
+        <h4 class="reveal" style="font-family:var(--font-body);font-size:1rem;font-weight:600;margin-top:1.75rem">
+          Packaging Inventory Logger
+        </h4>
+        <p class="reveal">
+          Packaging inventory counts were done on paper and then typed
+          into a spreadsheet. This replaces the paper: staff open the
+          app on a phone or tablet, search for an item, and record a
+          count. When the count is finished, an administrator exports
+          everything back into the original workbook. It runs as a
+          Windows desktop app that also serves a web interface over the
+          local Wi-Fi, so anyone on the floor can join by scanning a QR
+          code — no install on their device, no browser setup, no
+          account.
+        </p>
+        <p class="reveal">
+          Python and Flask behind a WebView2 window, SQLite for storage,
+          packaged with PyInstaller and Inno Setup so it installs like
+          normal software. The export writes totals into the workbook's
+          existing <code>counted</code> column and leaves the formulas
+          alone, which mattered more than it sounds — the people using
+          the result wanted their spreadsheet back, not a new one.
+        </p>
+
+        <h3 class="reveal">The hard part</h3>
+        <p class="reveal">
+          Getting several people counting at once was the problem that
+          made me think hardest. The obvious approach was to let everyone
+          write into a shared Excel workbook, because that's what the
+          process already used and what everyone already knew. Excel is
+          not built for that, and the failure modes are the bad kind:
+          locked files, lost entries, one person's save quietly
+          overwriting another's numbers. Nobody would even know a count
+          had gone missing.
+        </p>
+        <p class="reveal">
+          What made it tricky is that the constraint wasn't really
+          technical. I could have built something with accounts and a
+          proper server, but it had to work for someone standing in front
+          of a pallet holding a phone, mid-shift, without training.
+        </p>
+        <div class="callout reveal">
+          <span class="callout__label">What I ended up doing</span>
+          <p>
+            Two decisions did most of the work. First, one machine owns
+            the data: the app runs on a host PC and serves a web
+            interface over the local Wi-Fi, so the phones and tablets are
+            thin clients rather than copies. Joining is scanning a QR
+            code.
+          </p>
+          <p>
+            Second, and more important — counting appends rather than
+            overwrites. Each count is stored as its own timestamped
+            entry, and an item's total is computed as the sum of its
+            entries. There is no running total anywhere to be clobbered,
+            so two people counting the same item at the same time simply
+            produce two entries. It also meant a pallet could be counted
+            in several passes without anyone doing arithmetic in their
+            head, which turned out to be how people actually wanted to
+            work.
+          </p>
+          <p>
+            The spreadsheet stopped being where the counting happened. It
+            became the format the answer comes out in — a much easier
+            requirement to satisfy.
+          </p>
+        </div>
+        <p class="reveal">
+          I noticed afterwards that I'd made the same call twice without
+          planning to. Humidex Monitor computes humidex when a reading is
+          displayed rather than storing it; the inventory app computes
+          totals by summing entries rather than keeping a total. Both
+          times, storing the derived value would have been easier to
+          write and worse to live with — a cached number is a number
+          that can be wrong, and neither of these had to be.
+        </p>
+
+        <h3 class="reveal">Skills I brought versus skills I picked up</h3>
+        <p class="reveal">
+          Coursework gave me the fundamentals I leaned on constantly:
+          how to structure a program, how to think about data, enough
+          database knowledge to design a schema that wouldn't embarrass
+          me later. Those transferred directly.
+        </p>
+        <p class="reveal">
+          Almost everything else I learned on the job. The specific
+          stacks — TypeScript with Electron and React, Python with Flask
+          and Tkinter, SQLite underneath both — I picked up as I went.
+          But the bigger gaps weren't technical. Nobody had taught
+          me how to work out what to build when the person asking can't
+          specify it, how to ask a question on a production floor without
+          interrupting someone's work, or how to hand software to a
+          person who didn't ask for it and won't read documentation. In
+          class, the requirements come with the assignment. Here, finding
+          the requirements <em>was</em> the assignment.
+        </p>
+      </div>
+
+      <div class="figure-pair">
+        <figure class="reveal">
+          <div class="img-placeholder">Screenshot: Humidex Monitor dashboard</div>
+          <!-- <img src="images/humidex-dashboard.png" alt="The Humidex Monitor dashboard showing current readings and history"> -->
+          <figcaption>
+            Humidex Monitor running on the plant floor PC.
+          </figcaption>
+        </figure>
+        <figure class="reveal">
+          <div class="img-placeholder">Photo: a filled-in batch ticket or log sheet</div>
+          <!-- <img src="images/batch-ticket.jpg" alt="A filled-in paper batch ticket with handwritten production readings"> -->
+          <figcaption>
+            A batch ticket partway through its trip around the plant.
+            This is what all of it was really about.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         5. REFLECTION
+         ======================================================== -->
+    <section class="report-section" id="reflection">
+      <h2 class="reveal">What I Took Away</h2>
+      <div class="prose">
+        <p class="reveal">
+          I showed up in May thinking the hard part of this job would be
+          the building. It wasn't. The hard part was understanding a
+          process well enough to be sure I was building the right thing.
+        </p>
+        <p class="reveal">
+          My first process maps were wrong. Not badly wrong — the shape
+          was right — but I'd filled in the gaps with assumptions about
+          how production <em>must</em> work, based on how I'd have
+          designed it. The real process had exceptions I hadn't imagined,
+          steps that existed for reasons nobody had written down, and
+          workarounds people had built up over years because the official
+          way didn't survive contact with a busy shift. I didn't discover
+          any of that by looking at a diagram. I discovered it by
+          spending time on the floor and, eventually, learning to ask
+          better questions — less "does it work like this?", which gets
+          you a polite yes, and more "show me what you did last time this
+          went wrong."
+        </p>
+        <p class="reveal">
+          That reframed the whole term for me. The paper I was trying to
+          eliminate wasn't there because nobody had gotten around to
+          replacing it. It was there because it worked, and because the
+          people using it had shaped it around problems I couldn't see
+          from a desk. Anything I built had to be better than that — not
+          better in the abstract, better on a Tuesday afternoon in the
+          middle of a run.
+        </p>
+        <p class="reveal">
+          The other thing I'd tell myself in May: software you write for
+          people at work isn't finished when it runs. It's finished when
+          someone who didn't ask for it can install it, open it, and
+          understand what it's telling them without you standing there.
+          That's a much later point than I would have guessed.
+        </p>
+        <p class="reveal">
+          For my next work term, I want the same thing this one had: a
+          problem that starts vague, and enough access to the people
+          living with it to figure out what it actually is. I'd also like
+          to work somewhere with other developers around — I was
+          effectively working alone on the software side this term, and I
+          think I'd learn faster with people to review my decisions.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         6. CONCLUSION
+         ======================================================== -->
+    <section class="report-section" id="conclusion">
+      <h2 class="reveal">Conclusion</h2>
+      <div class="prose">
+        <p class="reveal">
+          Four months at Reunion took me from documenting how paper moves
+          through a coffee plant to shipping software that removes some
+          of it. I met the goals I set around technical literacy, problem
+          solving, and inquiry — though the last one taught me the most,
+          and not in the way I expected.
+        </p>
+        <p class="reveal">
+          If someone read this page and had to describe it in a sentence,
+          I'd want them to say: he learned that the interesting part of
+          building software for a business isn't the code, it's
+          understanding the work well enough to know what's worth
+          building — and he learned it by being wrong first.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         7. ACKNOWLEDGMENTS
+         ======================================================== -->
+    <section class="report-section" id="thanks">
+      <h2 class="reveal">Acknowledgments</h2>
+      <div class="prose">
+        <p class="reveal">
+          Thank you to Saiyid, who was plant manager when I started and
+          is now VP. He guided the project from the beginning and gave me
+          a lot of advice that had nothing to do with software — how to
+          work with people, how to carry yourself in a plant, when to
+          push and when to listen. I got a mentor out of this term, which
+          isn't something I expected going in.
+        </p>
+        <p class="reveal">
+          Thank you to Michael, our supply chain manager, who kept
+          handing me problems that were slightly beyond what I thought I
+          could do. Most of what I built this term traces back to
+          something he pushed me toward.
+        </p>
+        <p class="reveal">
+          And thank you to the operators, supervisors and QA staff on the
+          floor. I interrupted a lot of people's work this summer with
+          questions about processes they've been running for years, and
+          not one of them made me feel like a nuisance for asking.
+          Everything I understood about the plant, I understood because
+          someone stopped what they were doing to explain it.
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <a class="arrow-link reveal" href="index.html">
+        <span aria-hidden="true">←</span> Back to portfolio
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <span>© <span id="year">2026</span> Bassem Sourour</span>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="index.html">Portfolio</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const bar = document.getElementById('progress');
+  const onScroll = () => {
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    bar.style.transform = 'scaleX(' + (max > 0 ? h.scrollTop / max : 0) + ')';
+  };
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const links = [...document.querySelectorAll('.toc a')];
+  const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  if ('IntersectionObserver' in window && sections.length) {
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(a => a.classList.remove('is-active'));
+          const active = links.find(a => a.getAttribute('href') === '#' + entry.target.id);
+          if (active) active.classList.add('is-active');
+        }
+      });
+    }, { rootMargin: '-25% 0px -65% 0px' });
+    sections.forEach(s => spy.observe(s));
+  }
+
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          entry.target.style.transitionDelay = Math.min(i * 55, 220) + 'ms';
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+
+</body>
+</html>
