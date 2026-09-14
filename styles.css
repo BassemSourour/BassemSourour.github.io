@@ -7,18 +7,21 @@
 
 :root {
   /* Light theme (default) */
-  --bg:          #FBF9F6;
-  --bg-alt:      #F4EFE8;
-  --surface:     #FFFFFF;
-  --ink:         #1A1614;
-  --ink-soft:    #4A423C;
-  --muted:       #776C64;
-  --accent:      #A64B21;
-  --accent-ink:  #FFFFFF;
-  --accent-soft: #F2E3D8;
-  --border:      #E4DBD1;
-  --shadow:      0 1px 2px rgba(26, 22, 20, .04), 0 8px 24px rgba(26, 22, 20, .06);
-  --shadow-lift: 0 2px 4px rgba(26, 22, 20, .05), 0 16px 40px rgba(26, 22, 20, .10);
+  --bg:           #FDFCFA;
+  --bg-alt:       #F6F2EC;
+  --surface:      #FFFFFF;
+  --ink:          #1F1B18;
+  --ink-soft:     #4E4640;
+  --muted:        #786C64;
+  --accent:       #B4501B;
+  --accent-ink:   #FFFFFF;
+  --accent-soft:  #FBE7D8;
+  --accent2:      #17724F;
+  --accent2-ink:  #FFFFFF;
+  --accent2-soft: #DEF0E6;
+  --border:       #E8E0D6;
+  --shadow:       0 1px 2px rgba(60, 40, 25, .05), 0 8px 24px rgba(60, 40, 25, .07);
+  --shadow-lift:  0 2px 4px rgba(60, 40, 25, .06), 0 18px 44px rgba(60, 40, 25, .13);
 
   /* Type */
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
@@ -34,18 +37,21 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg:          #14110F;
-    --bg-alt:      #1B1714;
-    --surface:     #1E1A17;
-    --ink:         #F5F0EA;
-    --ink-soft:    #DCD3CA;
-    --muted:       #A2968C;
-    --accent:      #E4915B;
-    --accent-ink:  #14110F;
-    --accent-soft: #2C231C;
-    --border:      #2F2822;
-    --shadow:      0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .35);
-    --shadow-lift: 0 2px 4px rgba(0, 0, 0, .35), 0 16px 40px rgba(0, 0, 0, .45);
+    --bg:           #1C1815;
+    --bg-alt:       #241F1B;
+    --surface:      #252019;
+    --ink:          #F6F1EB;
+    --ink-soft:     #E0D7CD;
+    --muted:        #AB9E93;
+    --accent:       #EE9459;
+    --accent-ink:   #1C1815;
+    --accent-soft:  #33261C;
+    --accent2:      #57C595;
+    --accent2-ink:  #10201A;
+    --accent2-soft: #1D2F27;
+    --border:       #39312A;
+    --shadow:       0 1px 2px rgba(0, 0, 0, .35), 0 8px 24px rgba(0, 0, 0, .4);
+    --shadow-lift:  0 2px 4px rgba(0, 0, 0, .4), 0 18px 44px rgba(0, 0, 0, .5);
   }
 }
 
@@ -225,12 +231,25 @@ section { padding-block: clamp(3rem, 8vw, 5.5rem); }
 .hero::before {
   content: "";
   position: absolute;
-  top: -30%;
-  right: -12%;
-  width: min(46rem, 70vw);
+  top: -34%;
+  right: -14%;
+  width: min(48rem, 74vw);
   aspect-ratio: 1;
-  background: radial-gradient(circle, var(--accent-soft) 0%, transparent 68%);
-  opacity: .8;
+  background: radial-gradient(circle, var(--accent-soft) 0%, transparent 66%);
+  opacity: .95;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -46%;
+  left: -18%;
+  width: min(34rem, 58vw);
+  aspect-ratio: 1;
+  background: radial-gradient(circle, var(--accent2-soft) 0%, transparent 68%);
+  opacity: .7;
   pointer-events: none;
   z-index: 0;
 }
@@ -375,10 +394,23 @@ a.card:hover {
   font-size: .875rem;
   padding: .35rem .85rem;
   border-radius: 999px;
-  background: var(--accent-soft);
+  background: var(--accent2-soft);
   color: var(--ink-soft);
   border: 1px solid transparent;
+  transition: transform .15s ease;
 }
+
+.pills li:hover { transform: translateY(-1px); }
+
+/* Second pill row — outlined rather than filled, so two lists sitting
+   near each other read as different kinds of thing. */
+.pills--alt li {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--muted);
+}
+
+.pills--alt li:hover { border-color: var(--accent2); color: var(--ink-soft); }
 
 /* ---- 10. Report page --------------------------------------- */
 
@@ -543,7 +575,7 @@ a.card:hover {
   color: var(--ink-soft);
 }
 
-.goals__status--met { background: var(--accent); color: var(--accent-ink); }
+.goals__status--met { background: var(--accent2); color: var(--accent2-ink); }
 
 .goals__title { font-weight: 600; }
 

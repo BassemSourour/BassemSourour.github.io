@@ -11,6 +11,8 @@
 <meta property="og:description" content="Four months mapping a coffee roastery's information flow and building software to replace its paper.">
 <meta property="og:type" content="article">
 
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%23A64B21%27/%3E%3Ctext x=%2732%27 y=%2744%27 font-family=%27Georgia,serif%27 font-size=%2734%27 font-weight=%27600%27 fill=%27%23fff%27 text-anchor=%27middle%27%3EB%3C/text%3E%3C/svg%3E">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -159,17 +161,38 @@
         </p>
       </div>
 
-      <!-- PHOTO: see the list I sent you. Swap the placeholder for the img. -->
-      <figure class="reveal">
-        <div class="img-placeholder">
-          Photo: the roasting floor or production line
-        </div>
-        <!-- <img src="images/plant-floor.jpg" alt="Coffee roasting equipment on the production floor at Reunion Coffee Roasters"> -->
+      <!-- PHOTO 1 — mezzanine bird's eye. Full width: this is the
+           establishing shot, so it gets the most room on the page. -->
+      <figure class="reveal" style="max-width:100%">
+        <img src="images/plant-mezzanine.jpg" width="1600" height="739" loading="lazy"
+             alt="View from the mezzanine down onto a packaging line at Reunion Coffee Roasters: filling equipment, conveyors, stacked cartons and pallets, with an operator working at a bench on the right.">
         <figcaption>
-          The roasting floor. Most of the equipment here already produces
-          data — the challenge was everything happening around it.
+          The plant from the mezzanine. Most of what happens down there
+          already produces data — the problem was everything happening
+          around it.
         </figcaption>
       </figure>
+
+      <!-- PHOTO 2 + 3 — the roasters, and the building itself. -->
+      <div class="figure-pair">
+        <figure class="reveal">
+          <img src="images/roasters.jpg" width="1600" height="790" loading="lazy"
+               alt="Roaster #2 and Roaster #1 facing each other across the roasting floor, with ducting overhead and a control terminal between them.">
+          <figcaption>
+            The two roasters. Between them they print a slip for every
+            roast — machine-generated data that already existed on
+            paper before anyone typed it anywhere.
+          </figcaption>
+        </figure>
+        <figure class="reveal">
+          <img src="images/building-exterior.jpg" width="1600" height="739" loading="lazy"
+               alt="The exterior of Reunion Coffee Roasters at 2421 in Oakville, Ontario — a long single-storey plant with the company name in the window and a Canadian flag out front.">
+          <figcaption>
+            The plant in Oakville. Roasting, packaging, the lab and the
+            offices are all under this one roof.
+          </figcaption>
+        </figure>
+      </div>
     </section>
 
     <!-- ========================================================
@@ -322,6 +345,17 @@
         </figcaption>
       </figure>
 
+      <!-- PHOTO 3 — the kanban board. The paper, in volume. -->
+      <figure class="reveal">
+        <img src="images/kanban-board.jpg" width="1600" height="900" loading="lazy"
+             alt="A wall rack of mesh pockets labelled R1, R2, P7, P9, P0, R1A and R2A, filled with stacks of yellow, green and white paper batch tickets waiting to be worked.">
+        <figcaption>
+          The kanban board. Every card is a job moving through the
+          plant, and every one of them is a piece of paper somebody has
+          to walk over and read.
+        </figcaption>
+      </figure>
+
       <div class="prose">
 
         <h3 class="reveal">Then: building things</h3>
@@ -354,6 +388,24 @@
           a reading is displayed rather than stored — so if the formula
           ever needs correcting, the historical data corrects itself.
         </p>
+        <p class="reveal">
+          <a class="arrow-link" href="https://github.com/BassemSourour/humidex-monitor">Source on GitHub <span aria-hidden="true">→</span></a>
+        </p>
+      </div>
+
+      <!-- PHOTO 4 — the software. Full width: it's a dense UI and
+           needs the room to stay readable. -->
+      <figure class="reveal" style="max-width:100%">
+        <img src="images/humidex-app.jpg" width="1600" height="860" loading="lazy"
+             alt="The Humidex Monitor history screen: a 24-hour line chart of humidex for four plant sensors plus outdoor conditions, above a sensor table showing each sensor's alert threshold, comfort band and current reading.">
+        <figcaption>
+          Humidex Monitor's history view — four plant sensors against
+          outdoor conditions, with each sensor's alert threshold and
+          comfort band underneath.
+        </figcaption>
+      </figure>
+
+      <div class="prose">
 
         <h4 class="reveal" style="font-family:var(--font-body);font-size:1rem;font-weight:600;margin-top:1.75rem">
           QA Logger
@@ -389,6 +441,9 @@
           legible text arrives, commit to it. Devices that speak rarely
           stopped being punished for it.
         </p>
+        <p class="reveal">
+          <a class="arrow-link" href="https://github.com/BassemSourour/QA-Logger">Source on GitHub <span aria-hidden="true">→</span></a>
+        </p>
 
         <h4 class="reveal" style="font-family:var(--font-body);font-size:1rem;font-weight:600;margin-top:1.75rem">
           Packaging Inventory Logger
@@ -411,6 +466,9 @@
           existing <code>counted</code> column and leaves the formulas
           alone, which mattered more than it sounds — the people using
           the result wanted their spreadsheet back, not a new one.
+        </p>
+        <p class="reveal">
+          <a class="arrow-link" href="https://github.com/BassemSourour/pkg_inventory_app">Source on GitHub <span aria-hidden="true">→</span></a>
         </p>
 
         <h3 class="reveal">The hard part</h3>
@@ -485,24 +543,6 @@
           class, the requirements come with the assignment. Here, finding
           the requirements <em>was</em> the assignment.
         </p>
-      </div>
-
-      <div class="figure-pair">
-        <figure class="reveal">
-          <div class="img-placeholder">Screenshot: Humidex Monitor dashboard</div>
-          <!-- <img src="images/humidex-dashboard.png" alt="The Humidex Monitor dashboard showing current readings and history"> -->
-          <figcaption>
-            Humidex Monitor running on the plant floor PC.
-          </figcaption>
-        </figure>
-        <figure class="reveal">
-          <div class="img-placeholder">Photo: a filled-in batch ticket or log sheet</div>
-          <!-- <img src="images/batch-ticket.jpg" alt="A filled-in paper batch ticket with handwritten production readings"> -->
-          <figcaption>
-            A batch ticket partway through its trip around the plant.
-            This is what all of it was really about.
-          </figcaption>
-        </figure>
       </div>
     </section>
 
