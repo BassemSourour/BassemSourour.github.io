@@ -210,6 +210,16 @@
           guess turned out to be right — the job changed shape twice over
           four months.
         </p>
+        <p class="reveal">
+          The one technology I specifically wanted to get my hands on was
+          PLCs. They run the machines, and my thinking going in was that
+          if I wanted to make a real difference to how production worked,
+          the machine level was where it would happen. I never got near
+          one. The gaps my process maps surfaced were information
+          problems rather than control problems, so that's where the
+          work went — the right call for the plant, and still the skill
+          I'd most like to pick up next.
+        </p>
       </div>
 
       <ul class="goals">
@@ -232,7 +242,7 @@
         </li>
 
         <li class="reveal">
-          <span class="goals__status goals__status--met">Met</span>
+          <span class="goals__status">Partly</span>
           <span class="goals__title">Problem solving</span>
           <p class="goals__note">
             The problems I was handed weren't specified — they were
@@ -240,6 +250,16 @@
             was slow or error-prone, and turning that into something I
             could build was most of the job. The technical problems were
             usually the easier half.
+          </p>
+          <p class="goals__note">
+            Two of the three applications are in use. QA Logger isn't,
+            and that's the honest limit of what I managed. The lab runs
+            a lot of older instrumentation and tests a far wider range
+            of properties than I understood when I scoped it, and four
+            months wasn't enough to cover that surface. Solving a
+            problem properly includes sizing it first, and I sized this
+            one wrong — I'd rather have narrowed it to one instrument
+            and finished than built most of something.
           </p>
         </li>
 
@@ -258,12 +278,6 @@
 
       </ul>
 
-      <!-- NOTE FROM ME: you said all three were met, so that's what I've
-           written — I'm not inventing a failure. But if there's a goal
-           you actually fell short on, the rubric rewards saying so.
-           There's a "Partly" and a "Not met" style ready to use:
-           <span class="goals__status">Partly</span>
-           <span class="goals__status">Not met</span>            -->
     </section>
 
     <!-- ========================================================
@@ -419,7 +433,10 @@
           send, and writes the results into the workbook and a CSV audit
           trail as the readings happen. Scanning a barcode sets the
           active sample, and subsequent readings land on that sample's
-          row.
+          row. It works against the instruments I built it for, but it
+          didn't reach full production before the term ended — the lab
+          covers more ground than I'd scoped for, which I've written
+          about under Goals.
         </p>
         <p class="reveal">
           It's Python with a Tkinter interface, and it's the most
