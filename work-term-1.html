@@ -245,11 +245,15 @@
           <span class="goals__status">Partly</span>
           <span class="goals__title">Problem solving</span>
           <p class="goals__note">
-            The problems I was handed weren't specified — they were
-            described as frustrations. Someone would tell me a process
-            was slow or error-prone, and turning that into something I
-            could build was most of the job. The technical problems were
-            usually the easier half.
+            The gap is QA Logger. What I built works — it handles three
+            of the lab's instruments end to end — but the lab runs a
+            good deal more than three, some of it old enough that it
+            doesn't output anything a program can read. So the tool
+            covers a slice of the work and the spreadsheet is still
+            there for the rest. That's the thing I'd do differently:
+            I scoped the build and not the lab, and working software
+            isn't the same as a solved problem. From the QA team's side
+            the problem is still mostly open.
           </p>
           <p class="goals__note">
             Two of the three applications are in use. QA Logger isn't,
@@ -426,17 +430,17 @@
         </h4>
         <p class="reveal">
           The quality lab runs samples through several instruments — a
-          barcode scanner, an Ohaus BeanPro for moisture and density, a
+          barcode scanner, an Sinar BeanPro for moisture and density, a
           Dansensor CheckMate 3 for gas analysis — and every reading was
           being copied into a spreadsheet by hand. QA Logger listens to
           those instruments directly over USB serial, parses what they
           send, and writes the results into the workbook and a CSV audit
           trail as the readings happen. Scanning a barcode sets the
           active sample, and subsequent readings land on that sample's
-          row. It works against the instruments I built it for, but it
-          didn't reach full production before the term ended — the lab
-          covers more ground than I'd scoped for, which I've written
-          about under Goals.
+          row. It does that reliably for the three instruments above,
+          which is also its limit — the lab runs plenty more, so it
+          hasn't replaced the spreadsheet yet. I've written about that
+          under Goals.
         </p>
         <p class="reveal">
           It's Python with a Tkinter interface, and it's the most
